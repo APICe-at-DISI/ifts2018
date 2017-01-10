@@ -1,0 +1,14 @@
+*.directory
+*.out
+*.toc
+*.backup
+*.snm
+*.out
+*.nav
+*.log
+*.blg
+*.bbl
+*.aux
+*.vrb
+*/bin/*
+
