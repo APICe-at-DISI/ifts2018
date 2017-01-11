@@ -478,3 +478,31 @@ int main(void)
     }
 }
 {% endhighlight %}
+
+## Lezione 02: sistemi operativi e processi
+
+* [Architettura dei sistemi operativi](02/architettura.pdf)
+* [Struttura dei sistemi operativi](02/struttura.pdf)
+* [I processi](02/processi.pdf)
+
+### Simboli utili:
+
+* Tilde: `~` (Alt destro + ì)
+* Underscore: `_`
+* Sharp: `#`
+* At: `@`
+* Slash: `/`
+* Backslash: `\`
+
+### Uso veloce del terminale `bash`
+
+* Freccia su: richiama il comando precedente
+* Freccia giù: richiama il comando successivo (se presente)
+* TAB: autocompleta il comando o il percorso corrente (solo se esiste un'unica opzione disponibile)
+* Doppio TAB: mostra tutti i possibile autocompletamenti
+  * Nel caso in cui non vi sia alcuna possibilità, non mostra nulla
+  * Nel caso in cui vi siano moltissime possibilità, chiede prima conferma della volontà di mostrarle tutte
+
+## Lezione 03: file system e `bash`
+
+* [Il file system](03/fs.pdf)
