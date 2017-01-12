@@ -506,3 +506,4 @@ int main(void)
 ## Lezione 03: file system e `bash`
 
 * [Il file system](03/fs.pdf)
+* [Gestione del file system terminale](03/01-Intro.pdf)
