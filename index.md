@@ -506,4 +506,12 @@ int main(void)
 ## Lezione 03: file system e `bash`
 
 * [Il file system](03/fs.pdf)
-* [Gestione del file system terminale](03/01-Intro.pdf)
+* [Gestione del file system da terminale](03/01-Intro.pdf)
+* [Shell](03/shell.pdf)
+* [Guida minimale all'uso di `bash`](https://andrealazzarotto.com/2007/04/29/guida-base-ma-abbastanza-completa-al-terminale/)
+* [Altra guida con comandi `bash`](http://www.gandalfrank.altervista.org/Imparare_Linux.html). Le sezioni rilevanti sono **Filesystem** e **Comandi per la Shell**
+* [Bash scripting, guida completa](http://codex.altervista.org/guidabash/guidabash_1_11.pdf)
+
+## Lezione 04: Shell scripting, introduzione alle reti
+* [Shell scripting](04/shell-scripting.pdf)
+* [Lo stack ISO/OSI](04/2_ISO-OSI.pdf)
