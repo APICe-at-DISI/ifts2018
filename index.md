@@ -6,7 +6,7 @@ layout: default
 
 Si ricorda agli studenti che il materiale proposto è *consistentemente* più approfondito di quello visto a lezione.
 
-La macchina virtuale utilizzata nel corso è disponibile [clickando qui](https://mega.nz/#!LME2VLTa!2kivBCadVDo-hHcoxVbhJazkvw7r4Euk1QqxWroggYc).
+La macchina virtuale utilizzata nel corso è disponibile [clickando qui](https://mega.nz/#!XMERGDwY!aIwNDUom-Fsi-Gy_8doA8IkT-qOpX3zdUZ4W0fcy_1s).
 
 In caso di problemi (link mancanti, problemi di visualizzazione...) si prega di contattare direttamente [Danilo Pianini](mailto:danilo.pianini@unibo.it).
 
