@@ -515,9 +515,19 @@ int main(void)
 ## Lezione 04: Shell scripting, introduzione alle reti
 * [Shell scripting](04/shell-scripting.pdf)
 * [Lo stack ISO/OSI](04/2_ISO-OSI.pdf)
-* [L'uso di Internet](04/3_Uso_Internet.pdf)
+
+## Lezione 05: Le reti
 * [Il Domain Name System](04/3b_DNS.pdf)
 * [Lo strato di trasporto, protocollo TCP](04/4a_Trasporto.pdf)
 * [Il protocollo IP](04/6_IP.pdf)
 * [Il routing](04/9_Routing.pdf)
 * [Le reti locali](04/10_LAN.pdf)
+
+## Lezione 06: il web
+* [L'uso di Internet](04/3_Uso_Internet.pdf)
+* [Il World Wide Web](06/0-www.pdf)
+* [Il World Wide Web](06/1-http.pdf)
+* [Il World Wide Web](06/2-html.pdf)
+* [Il World Wide Web](06/3-xhtml.pdf)
+* [Il World Wide Web](06/4-XML.pdf)
+* [Il World Wide Web](06/5-CSS.pdf)
