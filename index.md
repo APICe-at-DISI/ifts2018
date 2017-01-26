@@ -532,16 +532,6 @@ int main(void)
 * [XML](06/4-XML.pdf)
 * [CSS](06/5-CSS.pdf)
 
-## Lezioni 07-09: i database
-* [Introduzione ai DBMS](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/1.pdf)
-* [Il modello relazionale](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/2.pdf)
-* [Il modello E/R](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/6_3.pdf)
-* [SQL parte 1](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/3_2.pdf)
-* [SQL parte 2](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/3_1.pdf)
-* [Interrogazioni annidate](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/3_3.pdf)
-* [Esercizi](http://www.cs.unibo.it/~difelice/dbsi/2016/esercizi/3e.pdf)
-* [SQL Fiddle](http://sqlfiddle.com/)
-
 ### Esempio di pagina web in HTML
 {% highlight html %}
 <html>
@@ -560,6 +550,16 @@ int main(void)
   </body>
 </html>
 {% endhighlight %}
+
+## Lezioni 07-09: i database
+* [Introduzione ai DBMS](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/1.pdf)
+* [Il modello relazionale](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/2.pdf)
+* [Il modello E/R](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/6_3.pdf)
+* [SQL parte 1](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/3_2.pdf)
+* [SQL parte 2](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/3_1.pdf)
+* [Interrogazioni annidate](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/3_3.pdf)
+* [Esercizi](http://www.cs.unibo.it/~difelice/dbsi/2016/esercizi/3e.pdf)
+* [SQL Fiddle](http://sqlfiddle.com/)
 
 ## Esempio di esercizi d'esame
 
