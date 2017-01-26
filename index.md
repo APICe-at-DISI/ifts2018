@@ -551,6 +551,90 @@ int main(void)
 </html>
 {% endhighlight %}
 
+## Esempio di esercizi d'esame
+
+### Terminale (12 punti)
+
+Si supponga di operare sul seguente file system:
+
+{% highlight bash %}
+/
+├── bin
+├── home
+│   ├── user
+│   │   ├── Documents
+│   │   ├── Desktop
+│   │   │   ├── test.txt
+│   │   │   └── immagine.jpg
+│   │   └── Pictures
+│   └── gigi
+├── proc
+└── var
+{% endhighlight %}
+
+Supponendo che il terminale punti a `/` e che sia loggato come utente `user`, scriva la sequenza di comandi necessari a:
+
+0. Stampare su terminale il contenuto del file `test.txt`
+0. Stampare su terminale le righe del file `test.txt` contenenti la parola `pluto`
+0. Creare la cartella `Documents` dentro `/home/user/`
+0. Spostare il file `immagine.jpg` dentro la cartella `Pictures`
+0. Copiare il file `test.txt` dentro la cartella menzionata al punto precedente, rinominandolo `documento.txt`
+0. Creare un nuovo file di testo di nome `pluto.txt` dentro la cartella `Documents` che contenga la frase `la donzelletta vien dalla campagna`
+0. Aggiungere al file del punto precedente una seconda linea di testo: `in sul calar del sole`
+
+### Routing (6 punti)
+
+Si supponga di disporre della seguente tabella di routing:
+{% highlight bash %}
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         137.204.107.254 0.0.0.0         UG    100    0        0 enp2s0
+127.204.107.0   0.0.0.0         255.255.255.0   U     100    0        0 enp2s0
+192.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
+{% endhighlight %}
+
+Si determini il gateway (o, se non presente, si indichi "consegna diretta") per i seguenti indirizzi IP:
+* `192.17.26.127`
+* `8.8.8.8`
+* `192.17.25.125`
+* `172.168.1.1`
+* `8.8.4.4`
+* `127.204.106.15`
+* `127.204.107.124`
+
+### HTML (12 punti)
+
+Si realizzi una pagina web in puro HTML con le seguenti caratteristiche:
+
+* Abbia come titolo "Prova d'esame"
+* Contenga tre paragrafi. Il testo del primo sia «Tanto gentile e tanto onesta pare», il testo del secondo sia «la donna mia quand'ella altrui saluta», il testo del terzo sia «ch'ogne lingua diven tremando muta».
+* Includa l'immagine `dante.jpg` presente nella cartella `img` che si trova nella stessa posizione in cui è stato posizionato il file HTML.
+* L'immagine sia un collegamento ipertestuale alla pagina `https://en.wikipedia.org/wiki/Dante_Alighieri`.
+
+### Progettazione di un database (15 punti)
+
+Si realizzi lo schema E/R e si indichino le tabelle e le chiavi primarie del database dell'Università della Vita, sapendo che:
+* dovranno essere memorizzati nome, cognome, codice fiscale e matricola degli studenti;
+* dovranno essere memorizzati nome, cognome, codice fiscale e matricola dei professori;
+* dovranno essere memorizzati nome, materia, anno, e codice di ciascun corso di studi;
+* dovranno essere memorizzati nome, materia, e codice di ciascun corso di laurea;
+* dovranno essere memorizzati gli indirizzi ed il nome delle aule;
+* dovranno essere memorizzate le date d'esame, l'aula in cui si svolgono le prove, la data e la valutazione;
+* ciascuno studente è iscritto ad un solo corso di laurea;
+* gli studenti possono seguire più corsi di studio;
+* ciascun professore tiene almeno un corso;
+* alcuni corsi di studio possono essere tenuti da più professori;
+* ciascun corso prevede un esame finale, con una valutazione in 30esimi;
+* ciascun esame avviene in un'aula;
+* il codice del corso non cambia fra anni diversi.
+
+### Scrittura di query SQL (15 punti)
+
+Con riferimento al database sopra realizzato, si scrivano le seguenti query SQL:
+* L'elenco dei nomi degli studenti, senza ripetizioni, in ordine alfabetico. (3 punti)
+* L'elenco dei cognomi dei professori che hanno dato almeno un 30 ad uno dei loro esami nel 2013 (6 punti)
+* Il voto medio totalizzato degli studenti che hanno fatto un esame in "aula magna" (6 punti)
+
 ## Lezioni 07-09: i database
 * [Introduzione ai DBMS](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/1.pdf)
 * [Il modello relazionale](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/2.pdf)
