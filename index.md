@@ -594,6 +594,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 {% endhighlight %}
 
 Si determini il gateway (o, se non presente, si indichi "consegna diretta") per i seguenti indirizzi IP:
+
 * `192.17.26.127`
 * `8.8.8.8`
 * `192.17.25.125`
@@ -614,6 +615,7 @@ Si realizzi una pagina web in puro HTML con le seguenti caratteristiche:
 ### Progettazione di un database (15 punti)
 
 Si realizzi lo schema E/R e si indichino le tabelle e le chiavi primarie del database dell'Università della Vita, sapendo che:
+
 * dovranno essere memorizzati nome, cognome, codice fiscale e matricola degli studenti;
 * dovranno essere memorizzati nome, cognome, codice fiscale e matricola dei professori;
 * dovranno essere memorizzati nome, materia, anno, e codice di ciascun corso di studi;
@@ -631,6 +633,7 @@ Si realizzi lo schema E/R e si indichino le tabelle e le chiavi primarie del dat
 ### Scrittura di query SQL (15 punti)
 
 Con riferimento al database sopra realizzato, si scrivano le seguenti query SQL:
+
 * L'elenco dei nomi degli studenti, senza ripetizioni, in ordine alfabetico. (3 punti)
 * L'elenco dei cognomi dei professori che hanno dato almeno un 30 ad uno dei loro esami nel 2013 (6 punti)
 * Il voto medio totalizzato degli studenti che hanno fatto un esame in "aula magna" (6 punti)
