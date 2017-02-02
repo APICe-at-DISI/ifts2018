@@ -592,6 +592,18 @@ Supponendo che il terminale punti a `/` e che sia loggato come utente `user`, sc
 0. Creare un nuovo file di testo di nome `pluto.txt` dentro la cartella `Documents` che contenga la frase `la donzelletta vien dalla campagna`
 0. Aggiungere al file del punto precedente una seconda linea di testo: `in sul calar del sole`
 
+**Soluzione**
+
+*Nota*: i comandi possibili sono più di uno! Questa è *una possibile soluzione*, soluzioni con più comandi, o comandi diversi, potrebbero essere altrettanto valide.
+
+0. `cat home/user/Desktop/test.txt`
+0. `cat /home/user/Desktop/test.txt | grep pluto`
+0. Nessun comando necessario (la cartella è già presente)
+0. `mv home/user/Desktop/immagine.jpg home/user/Pictures/`
+0. `mv home/user/Desktop/test.txt home/user/Pictures/documento.txt`
+0. `echo la donzelletta vien dalla campagna > home/user/Documents/pluto.txt`
+0. `echo in sul calar del sole >> home/user/Documents/pluto.txt`
+
 ### Routing (6 punti)
 
 Si supponga di disporre della seguente tabella di routing:
@@ -613,6 +625,17 @@ Si determini il gateway (o, se non presente, si indichi "consegna diretta") per 
 * `127.204.106.15`
 * `127.204.107.124`
 
+**Soluzione**
+
+* consegna diretta
+* `137.204.107.254`
+* consegna diretta
+* `137.204.107.254`
+* `137.204.107.254`
+* `137.204.107.254`
+* consegna diretta
+
+
 ### HTML (12 punti)
 
 Si realizzi una pagina web in puro HTML con le seguenti caratteristiche:
@@ -622,6 +645,22 @@ Si realizzi una pagina web in puro HTML con le seguenti caratteristiche:
 * Includa l'immagine `dante.jpg` presente nella cartella `img` che si trova nella stessa posizione in cui è stato posizionato il file HTML.
 * L'immagine sia un collegamento ipertestuale alla pagina `https://en.wikipedia.org/wiki/Dante_Alighieri`.
 
+**Soluzione**
+
+{% highlight html %}
+<html>
+  <head>
+    <title>Prova d&#039;Esame</title>
+  </head>
+  <body>
+  <p>Tanto gentile e tanto onesta pare</p>
+  <p>la donna mia quand&#039;ella altrui saluta</p>
+  <p>ch&#039;ogne lingua diven tremando muta</p>
+  <a href="https://en.wikipedia.org/wiki/Dante_Alighieri"><img src="img/dante.jps"/</a>
+  </body>
+</html>
+{% endhighlight %}
+
 ### Progettazione di un database (15 punti)
 
 Si realizzi lo schema E/R e si indichino le tabelle e le chiavi primarie del database dell'Università della Vita, sapendo che:
@@ -629,7 +668,7 @@ Si realizzi lo schema E/R e si indichino le tabelle e le chiavi primarie del dat
 * dovranno essere memorizzati nome, cognome, codice fiscale e matricola degli studenti;
 * dovranno essere memorizzati nome, cognome, codice fiscale e matricola dei professori;
 * dovranno essere memorizzati nome, materia, anno, e codice di ciascun corso di studi;
-* dovranno essere memorizzati nome, materia, e codice di ciascun corso di laurea;
+* dovranno essere memorizzati nome, e codice di ciascun corso di laurea;
 * dovranno essere memorizzati gli indirizzi ed il nome delle aule;
 * dovranno essere memorizzate le date d'esame, l'aula in cui si svolgono le prove, la data e la valutazione;
 * ciascuno studente è iscritto ad un solo corso di laurea;
@@ -640,6 +679,22 @@ Si realizzi lo schema E/R e si indichino le tabelle e le chiavi primarie del dat
 * ciascun esame avviene in un'aula;
 * il codice del corso non cambia fra anni diversi.
 
+**Soluzione (solo tabelle)**
+
+*Nota*: sono possibili molteplici soluzioni. Questa è una delle possibili.
+
+*Nota*: per semplicità, le chiavi primarie verranno indicate in grassetto invece che con la sottolineatura (come sarebbe corretto).
+
+* Persone(Nome, Cognome, **CF**)
+* Studenti(CF: Persone.CF, **Matricola**)
+* Professori(CF: Persone.CF, **Matricola**)
+* CorsiStudio(Nome, Materia, **Anno**, **Codice**)
+* CorsiLaurea(Nome, **Codice**)
+* Aulee(**Nome**, **Indirizzo**)
+* DateEsami(NomeAula: Aulee.Nome, IndirizzoAula: Aulee.Indirizzo, **Data**, **CC: CorsiStudio.Codice**, **CA: CorsiStudio.Anno**)
+* Voti(**Data: DateEsami.Data**, **CC: CorsiStudio.Codice**, **CA: CorsiStudio.Anno**, **Matricola: Studenti.Matricola**, Voto)
+* Insegnamenti(**Matricola: Professori.Matricola**, **CC: CorsiStudio.Codice**, **CA: CorsiStudio.Anno**)
+
 ### Scrittura di query SQL (15 punti)
 
 Con riferimento al database sopra realizzato, si scrivano le seguenti query SQL:
@@ -647,3 +702,29 @@ Con riferimento al database sopra realizzato, si scrivano le seguenti query SQL:
 * L'elenco dei nomi degli studenti, senza ripetizioni, in ordine alfabetico. (3 punti)
 * L'elenco dei cognomi dei professori che hanno dato almeno un 30 ad uno dei loro esami nel 2013 (6 punti)
 * Il voto medio totalizzato degli studenti che hanno fatto un esame in "aula magna" (6 punti)
+
+**Soluzione**
+
+*Nota*: sono possibili molteplici soluzioni. Questa è una delle possibili.
+
+{% highlight sql %}
+SELECT DISTINCT Nome
+FROM Studenti
+SORT BY Nome
+{% endhighlight %}
+
+{% highlight sql %}
+SELECT Cognome
+FROM Professori AS P, Voti AS V, Insegnamenti AS I
+WHERE P.Matricola=I.Matricola AND I.CC=V.CC AND I.CA=V.CA
+      AND V.Voto = 30
+      AND V.Data >= '2013-01-01' AND V.Data <= '2013-12-31'
+{% endhighlight %}
+
+{% highlight sql %}
+SELECT AVG(Voto)
+FROM Voti AS V, Aulee AS A, DateEsami AS D
+WHERE V.Data=D.Data AND V.CC=D.CC AND V.CA=D.CA
+      AND D.NomeAula=A.Nome AND D.IndirizzoAula=A.Indirizzo
+      AND A.Nome="aula magna"
+{% endhighlight %}
