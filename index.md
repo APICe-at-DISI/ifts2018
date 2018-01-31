@@ -10,7 +10,7 @@ La macchina virtuale utilizzata nel corso è disponibile [clickando qui](https:/
 
 In caso di problemi (link mancanti, problemi di visualizzazione...) si prega di contattare direttamente [Danilo Pianini](mailto:danilo.pianini@unibo.it).
 
-## Lezione 01: introduzione ai sistemi informatici
+## Introduzione ai sistemi informatici
 
 * [Introduzione all'informatica (in inglese)](01/intro.pdf)
 * [Introduzione ai sistemi operativi](01/intro-os.pdf)
@@ -479,7 +479,7 @@ int main(void)
 }
 {% endhighlight %}
 
-## Lezione 02: sistemi operativi e processi
+## Sistemi operativi e processi
 
 * [Architettura dei sistemi operativi](02/architettura.pdf)
 * [Struttura dei sistemi operativi](02/struttura.pdf)
@@ -503,7 +503,7 @@ int main(void)
   * Nel caso in cui non vi sia alcuna possibilità, non mostra nulla
   * Nel caso in cui vi siano moltissime possibilità, chiede prima conferma della volontà di mostrarle tutte
 
-## Lezione 03: file system e `bash`
+## File system e `bash`
 
 * [Il file system](03/fs.pdf)
 * [Gestione del file system da terminale](03/01-Intro.pdf)
@@ -511,220 +511,44 @@ int main(void)
 * [Guida minimale all'uso di `bash`](https://andrealazzarotto.com/2007/04/29/guida-base-ma-abbastanza-completa-al-terminale/)
 * [Altra guida con comandi `bash`](http://www.gandalfrank.altervista.org/Imparare_Linux.html). Le sezioni rilevanti sono **Filesystem** e **Comandi per la Shell**
 * [Bash scripting, guida completa](http://codex.altervista.org/guidabash/guidabash_1_11.pdf)
-
-## Lezione 04: Shell scripting, introduzione alle reti
 * [Shell scripting](04/shell-scripting.pdf)
-* [Lo stack ISO/OSI](04/2_ISO-OSI.pdf)
 
-## Lezione 05: Le reti
-* [Il Domain Name System](04/3b_DNS.pdf)
-* [Lo strato di trasporto, protocollo TCP](04/4a_Trasporto.pdf)
-* [Il protocollo IP](04/6_IP.pdf)
-* [Il routing](04/9_Routing.pdf)
-* [Le reti locali](04/10_LAN.pdf)
+# Programmazione in Python
 
-## Lezione 06: il web
-* [L'uso di Internet](04/3_Uso_Internet.pdf)
-* [Il World Wide Web](06/0-www.pdf)
-* [HTTP](06/1-http.pdf)
-* [HTML](06/2-html.pdf)
-* [XHTML](06/3-xhtml.pdf)
-* [XML](06/4-XML.pdf)
-* [CSS](06/5-CSS.pdf)
+## Scaletta dei contenuti (in aggiornamento, può subire variazioni anche consistenti)
 
-### Esempio di pagina web in HTML
-{% highlight html %}
-<html>
-  <head>
-    <title>PAGINAZZAaaaa</title>
-  </head>
-  <body>
-  <p>Ciao</p><p> mamma</p>
-  <p>2 &lt; 5</p>
-  this<br />is<br />some<br />text<br />
-  <p>these</p><p>are</p><p>paragraphs</p>
-  <a href="http://www.google.it">this is a link</a><br></br>
-  <a href="linked.htm">link a pluto</a><br />
-  <img src="Downloads/collision.png"/><br/>
-  <img src="http://www.coderdojotrento.it:8080/wp-content/uploads/2013/12/HTML.jpg"/>
-  </body>
-</html>
-{% endhighlight %}
+* Interprete Python, REPL, script
+* valori, espressioni, operatori, confronto ed equivalenza, operatori booleani
+* tipi, tipi predefiniti
+* conversioni fra tipi, chiamata di funzione
+* variabili, nomi consentiti, assegnamento, riferimento
+* commento, `print`, `input`, `len`, `type`
+* Esercizi cap. 1
+* Controllo del flusso: if-elif-else (branching), indentazione e sintassi
+* Controllo del flusso: `while` (repetition aka iteration) [continue e break], `for` (e `range` fun)
+* Funzioni: definizione, parametri, ritorno; scope locale e globale
+* Parametri di default, parametri con nome
+* Moduli, `import`, passaggio parametri a programmi (`sys.argv`)
+* Liste: sintassi letterale, accesso, indexing/slicing, `len`, operazioni su list
+* riferimenti (in assegnmento e passaggio parametri), [`copy()`, `deepcopy()`]
+* iterating over lists, (`not`) `in` operatore, metodi (e.g., list.index(obj, *args, remove, sort..))
+* stringhe come liste, tuple
+* dizionari
+* basic file I/O, Eccezioni
+* advanced file I/O (shutil)
+* IDE: PyCharm
+* string manipulation
+* regexps
 
-## Lezioni 07-09: i database
-* [Introduzione ai DBMS](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/1.pdf)
-* [Il modello relazionale](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/2.pdf)
-* [Il modello E/R](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/6_3.pdf)
-* [SQL parte 1](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/3_2.pdf)
-* [SQL parte 2](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/3_1.pdf)
-* [Interrogazioni annidate](http://www.cs.unibo.it/~difelice/dbsi/2016/slides/pdf/3_3.pdf)
-* [Esercizi](http://www.cs.unibo.it/~difelice/dbsi/2016/esercizi/3e.pdf)
-* [SQL Fiddle](http://sqlfiddle.com/)
+## Testi e risorse per lo studio
 
-## Esempio di esercizi d'esame
-
-### Terminale (12 punti)
-
-Si supponga di operare sul seguente file system:
-
-{% highlight bash %}
-/
-├── bin
-├── home
-│   ├── user
-│   │   ├── Documents
-│   │   ├── Desktop
-│   │   │   ├── test.txt
-│   │   │   └── immagine.jpg
-│   │   └── Pictures
-│   └── gigi
-├── proc
-└── var
-{% endhighlight %}
-
-Supponendo che il terminale punti a `/` e che sia loggato come utente `user`, scriva la sequenza di comandi necessari a:
-
-0. Stampare su terminale il contenuto del file `test.txt`
-0. Stampare su terminale le righe del file `test.txt` contenenti la parola `pluto`
-0. Creare la cartella `Documents` dentro `/home/user/`
-0. Spostare il file `immagine.jpg` dentro la cartella `Pictures`
-0. Copiare il file `test.txt` dentro la cartella menzionata al punto precedente, rinominandolo `documento.txt`
-0. Creare un nuovo file di testo di nome `pluto.txt` dentro la cartella `Documents` che contenga la frase `la donzelletta vien dalla campagna`
-0. Aggiungere al file del punto precedente una seconda linea di testo: `in sul calar del sole`
-
-**Soluzione**
-
-*Nota*: i comandi possibili sono più di uno! Questa è *una possibile soluzione*, soluzioni con più comandi, o comandi diversi, potrebbero essere altrettanto valide.
-
-0. `cat home/user/Desktop/test.txt`
-0. `cat /home/user/Desktop/test.txt | grep pluto`
-0. Nessun comando necessario (la cartella è già presente)
-0. `mv home/user/Desktop/immagine.jpg home/user/Pictures/`
-0. `mv home/user/Desktop/test.txt home/user/Pictures/documento.txt`
-0. `echo la donzelletta vien dalla campagna > home/user/Documents/pluto.txt`
-0. `echo in sul calar del sole >> home/user/Documents/pluto.txt`
-
-### Routing (6 punti)
-
-Si supponga di disporre della seguente tabella di routing:
-{% highlight bash %}
-Kernel IP routing table
-Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
-0.0.0.0         137.204.107.254 0.0.0.0         UG    100    0        0 enp2s0
-127.204.107.0   0.0.0.0         255.255.255.0   U     100    0        0 enp2s0
-192.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
-{% endhighlight %}
-
-Si determini il gateway (o, se non presente, si indichi "consegna diretta") per i seguenti indirizzi IP:
-
-* `192.17.26.127`
-* `8.8.8.8`
-* `192.17.25.125`
-* `172.168.1.1`
-* `8.8.4.4`
-* `127.204.106.15`
-* `127.204.107.124`
-
-**Soluzione**
-
-* consegna diretta
-* `137.204.107.254`
-* consegna diretta
-* `137.204.107.254`
-* `137.204.107.254`
-* `137.204.107.254`
-* consegna diretta
-
-
-### HTML (12 punti)
-
-Si realizzi una pagina web in puro HTML con le seguenti caratteristiche:
-
-* Abbia come titolo "Prova d'esame"
-* Contenga tre paragrafi. Il testo del primo sia «Tanto gentile e tanto onesta pare», il testo del secondo sia «la donna mia quand'ella altrui saluta», il testo del terzo sia «ch'ogne lingua diven tremando muta».
-* Includa l'immagine `dante.jpg` presente nella cartella `img` che si trova nella stessa posizione in cui è stato posizionato il file HTML.
-* L'immagine sia un collegamento ipertestuale alla pagina `https://en.wikipedia.org/wiki/Dante_Alighieri`.
-
-**Soluzione**
-
-{% highlight html %}
-<html>
-  <head>
-    <title>Prova d&#039;Esame</title>
-  </head>
-  <body>
-  <p>Tanto gentile e tanto onesta pare</p>
-  <p>la donna mia quand&#039;ella altrui saluta</p>
-  <p>ch&#039;ogne lingua diven tremando muta</p>
-  <a href="https://en.wikipedia.org/wiki/Dante_Alighieri"><img src="img/dante.jps"/</a>
-  </body>
-</html>
-{% endhighlight %}
-
-### Progettazione di un database (15 punti)
-
-Si realizzi lo schema E/R e si indichino le tabelle e le chiavi primarie del database dell'Università della Vita, sapendo che:
-
-* dovranno essere memorizzati nome, cognome, codice fiscale e matricola degli studenti;
-* dovranno essere memorizzati nome, cognome, codice fiscale e matricola dei professori;
-* dovranno essere memorizzati nome, materia, anno, e codice di ciascun corso di studi;
-* dovranno essere memorizzati nome, e codice di ciascun corso di laurea;
-* dovranno essere memorizzati gli indirizzi ed il nome delle aule;
-* dovranno essere memorizzate le date d'esame, l'aula in cui si svolgono le prove, la data e la valutazione;
-* ciascuno studente è iscritto ad un solo corso di laurea;
-* gli studenti possono seguire più corsi di studio;
-* ciascun professore tiene almeno un corso;
-* alcuni corsi di studio possono essere tenuti da più professori;
-* ciascun corso prevede un esame finale, con una valutazione in 30esimi;
-* ciascun esame avviene in un'aula;
-* il codice del corso non cambia fra anni diversi.
-
-**Soluzione (solo tabelle)**
-
-*Nota*: sono possibili molteplici soluzioni. Questa è una delle possibili.
-
-*Nota*: per semplicità, le chiavi primarie verranno indicate in grassetto invece che con la sottolineatura (come sarebbe corretto).
-
-* Persone(Nome, Cognome, **CF**)
-* Studenti(CF: Persone.CF, **Matricola**)
-* Professori(CF: Persone.CF, **Matricola**)
-* CorsiStudio(Nome, Materia, **Anno**, **Codice**)
-* CorsiLaurea(Nome, **Codice**)
-* Aulee(**Nome**, **Indirizzo**)
-* DateEsami(NomeAula: Aulee.Nome, IndirizzoAula: Aulee.Indirizzo, **Data**, **CC: CorsiStudio.Codice**, **CA: CorsiStudio.Anno**)
-* Voti(**Data: DateEsami.Data**, **CC: CorsiStudio.Codice**, **CA: CorsiStudio.Anno**, **Matricola: Studenti.Matricola**, Voto)
-* Insegnamenti(**Matricola: Professori.Matricola**, **CC: CorsiStudio.Codice**, **CA: CorsiStudio.Anno**)
-
-### Scrittura di query SQL (15 punti)
-
-Con riferimento al database sopra realizzato, si scrivano le seguenti query SQL:
-
-* L'elenco dei nomi degli studenti, senza ripetizioni, in ordine alfabetico. (3 punti)
-* L'elenco dei cognomi dei professori che hanno dato almeno un 30 ad uno dei loro esami nel 2013 (6 punti)
-* Il voto medio totalizzato degli studenti che hanno fatto un esame in "aula magna" (6 punti)
-
-**Soluzione**
-
-*Nota*: sono possibili molteplici soluzioni. Questa è una delle possibili.
-
-{% highlight sql %}
-SELECT DISTINCT Nome
-FROM Studenti
-SORT BY Nome
-{% endhighlight %}
-
-{% highlight sql %}
-SELECT Cognome
-FROM Professori AS P, Voti AS V, Insegnamenti AS I
-WHERE P.Matricola=I.Matricola AND I.CC=V.CC AND I.CA=V.CA
-      AND V.Voto = 30
-      AND V.Data >= '2013-01-01' AND V.Data <= '2013-12-31'
-{% endhighlight %}
-
-{% highlight sql %}
-SELECT AVG(Voto)
-FROM Voti AS V, Aulee AS A, DateEsami AS D
-WHERE V.Data=D.Data AND V.CC=D.CC AND V.CA=D.CA
-      AND D.NomeAula=A.Nome AND D.IndirizzoAula=A.Indirizzo
-      AND A.Nome="aula magna"
-{% endhighlight %}
+* **Testo di riferimento**: [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) (in inglese)
+* [Passo dopo passo impariamo a programmare con Python](http://linuxdidattica.org/polito/manuale-python-V2.pdf), tutorial progressivo (raccomandato a chi non ha mai visto alcun linguaggio di programmazione)
+* [Pensare in Python - Come pensare da Informatico](https://github.com/AllenDowney/ThinkPythonItalian/raw/master/thinkpython_italian.pdf), ottimo testo in generale, introduce il linguaggio molto velocemente (raccomandato a chi abbia già una vaga idea di come funzioni un linguaggio di programmazione)
+* [Python per i principianti](https://www.python.it/doc/newbie/), pagina di riferimento per generalità, scaricamento, installazione e informazioni sul linguaggio
+* [Slides riassuntive del linguaggio](Python/python-intro.pdf), adatte a chi già conosce il linguaggio di programmazione Java
+* [Programmare con Python: Guida Completa](Python/ProgrammareConPython.epub)
+* [Dive Into Python](http://www.diveintopython.net/download/diveintopython-pdf-5.4.zip), libro *avanzato* (in inglese)
+* [Immergersi in Python](http://it.diveintopython.net/toc/index.html), libro *avanzato* (versione italiana online)
+* [Elenco dei libri su Python](https://www.python.it/doc/libri/)
+* [Elenco di risorse multimediali su Python](https://www.python.it/doc/media/)
