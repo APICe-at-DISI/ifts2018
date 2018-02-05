@@ -552,3 +552,40 @@ int main(void)
 * [Immergersi in Python](http://it.diveintopython.net/toc/index.html), libro *avanzato* (versione italiana online)
 * [Elenco dei libri su Python](https://www.python.it/doc/libri/)
 * [Elenco di risorse multimediali su Python](https://www.python.it/doc/media/)
+
+## Esercizi svolti a lezione
+
+{% highlight python %}
+# Programma che concatena due stringhe di testo prese in input dal terminale
+x = input()
+y = input()
+print(x + y)
+{% endhighlight %}
+
+{% highlight python %}
+##################################
+# Verfica che un numero sia pari #
+##################################
+if int(input()) % 2 == 0:
+  print('even') # Traduzione di pari
+else:
+  print('odd')
+{% endhighlight %}
+{% highlight python %}
+# Ciclo infinito, interprete in loop
+while True:
+  print('woooo')
+{% endhighlight %}
+{% highlight python %}
+# Finto sistema di login, con password che viene richiesta finché non viene inserita correttamente
+print('username: ')
+user = input()
+if user == 'Danilo':
+  print('password: ')
+  while input() != 'letmein':
+    print('wrong password.')
+    print('password: ')
+  print('Access granted.')
+else:
+  print('No user named ' + user + ' is registered on the system')
+{% endhighlight %}
