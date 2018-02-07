@@ -589,3 +589,72 @@ if user == 'Danilo':
 else:
   print('No user named ' + user + ' is registered on the system')
 {% endhighlight %}
+{% highlight python %}
+# Effettuare la stessa operazione un numero predefinito di volte usando while
+count = 0
+while count != 15:
+  print('ciao')
+  count += 1 # count = count + 1
+{% endhighlight %}
+{% highlight python %}
+# Effettuare la stessa operazione un numero predefinito di volte usando for e range
+for count in range(15):
+  print('ciao per la ' + str(count + 1) + ' volta')
+{% endhighlight %}
+{% highlight python %}
+# Funzione che restituisce il più piccolo numero pari maggiore o uguale all'argomento passato
+def nextEven(start):
+  if start % 2 == 0:
+    return start
+  else:
+    return start + 1
+
+# Stesso programma di prima, in forma compatta, con if "funzionale"
+def nextEvenCompact(start):
+  return start if start % 2 == 0 else start + 1
+
+for i in range(3, 22):
+  # Uso della funzione sopra definita (all'interno di un'altra chiamata a funzione)
+  print('Next even of ' + str(i) + ': ' + str(nextEvenCompact(i)))
+{% endhighlight %}
+{% highlight python %}
+# Scope delle variabili: variabili locali *non* modificano lo scope del chiamante
+def myfun():
+  a = 10
+  myfun2()
+  print(a)
+
+def myfun2():
+  a = 15
+  print(a)
+
+a = 20
+myfun()
+print(a)
+{% endhighlight %}
+{% highlight python %}
+# Passaggio di parametri e scoping
+def myfun(a):
+  print(a)
+  a = 10
+  print(a)
+
+a = 5
+myfun(a)
+print(a)
+{% endhighlight %}
+{% highlight python %}
+# Funzione con named e default parameters
+def printPerson(name='unknown', surname='unknown', year=1990, address=''):
+  print(name + ' ' + surname + ' born in ' + str(year) + '  living in ' + address)
+
+printPerson('Mario', 'Rossi', 1980)
+printPerson(surname='Bianchi', address='Via Sacchi, 3')
+{% endhighlight %}
+{% highlight python %}
+# Esercizio: riscrivere l'applicazione di autenticazione servendosi di una funzione che:
+# - prese in ingresso due stringhe rappresentanti rispettivamente una domanda ed una risposta attesa
+# - ponga la domanda all'utente attraverso una stampa
+# - acquisisca una risposta dall'utente
+# - restituisca True se la risposta ottenuta corrisponde a quella attesa, False altrimenti
+{% endhighlight %}
