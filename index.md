@@ -657,4 +657,13 @@ printPerson(surname='Bianchi', address='Via Sacchi, 3')
 # - ponga la domanda all'utente attraverso una stampa
 # - acquisisca una risposta dall'utente
 # - restituisca True se la risposta ottenuta corrisponde a quella attesa, False altrimenti
+def answerWith(expected, question=': '):
+  return input(question) == expected
+
+if answerWith('Danilo', 'Username: '):
+  while not answerWith('pluto', question='Password: '):
+    print('Wrong password.')
+  print('Access granted.')
+else:
+  print('unkown user')
 {% endhighlight %}
