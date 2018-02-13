@@ -667,3 +667,56 @@ if answerWith('Danilo', 'Username: '):
 else:
   print('unkown user')
 {% endhighlight %}
+
+{% highlight python %}
+"""
+Scheletro del programma per il gioco "tic-tac-toe" (o tris). Questo programma va
+modificato come segue:
+
+* Il programma deve terminare quando un giocatore vince, annunciando il vincitore
+con una stampa
+
+* Il programma deve impedire ad un giocatore di sovrascrivere le mosse dell'altro
+
+* Il programma deve impedire ai giocatori di inserire posizioni esterne alla
+griglia (ad esempio 9,9)
+
+* (Dopo che avrete fatto le eccezioni col prof. Casadei) In caso di inserimento
+di valori non accettabili, si stampi una guida (e.g. "Valore non valido, inserire
+una coppia di valori separati da uno spazio, ad esempio: 1 1"). 
+
+"""
+def emptyBoard(boardSize = 3):
+  board = {}
+  for i in range(boardSize):
+    for j in range(boardSize):
+      board[(i, j)] = ' '
+  return board
+
+def printBoard(board):
+  print('_______')
+  currentRow = 0
+  print('|', end='')
+  for pos, player in board.items():
+    if pos[0] != currentRow:
+      print()
+      currentRow = pos[0]
+      print('|', end='')
+    print(player + '|', end='')
+  print('\n-------')
+
+def posFromUser(message='Where do you want to play? '):
+  userinput = input(message)
+  num1 = int(userinput[0])
+  num2 = int(userinput[2])
+  return (num1, num2)
+
+if __name__ == '__main__':
+  board = emptyBoard()
+  currentPlayer = 'O'
+  while True:
+    currentPlayer = 'X' if currentPlayer == 'O' else 'O'
+    position = posFromUser()
+    board[position] = currentPlayer
+    printBoard(board)
+{% endhighlight %}
