@@ -667,3 +667,122 @@ if answerWith('Danilo', 'Username: '):
 else:
   print('unkown user')
 {% endhighlight %}
+
+## Alcuni appunti
+
+### Dizionari (aka hash maps)
+
+{% highlight python %}
+d = { 'key1':'val1', True: 7.7 } # Sintassi letterale; dizionari sono eterogenei
+'key' not in d # True
+d[True] = 8.8 # d => {True: 8.8, 'key1': 'val1'}
+d[777]      # KeyError
+d.get(777)  # None (chiave 777 non esiste)
+d.get(True) # 8.8
+
+d.keys()   # [True, 'key1']
+d.values() # [8.8, 'val1']
+d.items()  # [(True, 8.8), ('key1', 'val1')]
+
+len(d) # 2
+
+d2 = d        # copia riferimento allo stesso dizionario
+d3 = d.copy() # crea una nuova copia del dizionario (a un primo livello)
+
+for key in d: print(key)  # itera sulle chiavi
+
+for k,v in d.items(): print(k,v) # itera sulle coppie (chiave,valore)
+
+for i,key in enumerate(d): print(i,key) # itera su coppie (indice progressivo, chiave)
+
+d.update({ 'key1' : 'val2' }) # aggiorna il dizionario con una mappa
+
+d.update(k1='hello', True=5.5) # {True: 8.8, 'key1': 'val2', 'True': 5.5, 'k1': 'hello'}
+
+d.clear() # elimina tutte le coppie dal dizionario
+{% endhighlight %}
+
+### List e Dictionary Comprehension
+
+{% highlight python %}
+# List Comprehension
+[(x,y) for x in [1,2,3] for y in [3,1,4] if x != y]
+
+# Dictionary comprehension
+{ k:(v*v) for k,v in {'a':1, 'b':2, 'c':3}.items() if v>1 }
+{% endhighlight %}
+
+### Eccezioni
+
+{% highlight python %}
+raise Exception('Messaggio d'errore')
+
+try: ...
+except NameError: ... # cattura eccezione di tipo NameError
+except IOError as ex: print(ex.errno, ex.strerror) # Cattura eccezione e recupera oggetto corrispondente
+except:  ... # cattura tutti gli errori
+else:    ... # codice da eseguire se nessuna eccezione viene sollevata
+finally: ... # codice da eseguire in ogni modo alla fine del blocco
+{% endhighlight %}
+
+### File I/O
+
+- File: nome file + path (percorso)
+- Path assoluto: inizia con la directory radice
+- Path relativo: è relativo alla cartella di lavoro corrente (working directory) 
+- "." significa 'questa cartella'; ".." significa 'cartella padre/contenitrice'
+
+{% highlight python %}
+import os # https://docs.python.org/3/library/os.html
+
+os.path.join('.','dir','subdir')
+
+os.sep # '/' su Linux, '\\' su Windows
+
+os.path.abspath(".")
+
+os.path.relpath("a\\b",'.') # a\\b
+os.path.relpath('C:\\Windows', 'C:\\') # 'Windows'
+os.path.isabs(path)
+os.path.basename('C:\\Windows\\System32\\calc.exe') # 'calc.exe'
+os.path.dirname('C:\\Windows\\System32\\calc.exe') # 'C:\\Windows\\System32'
+os.path.split('C:\\Windows\\System32\\calc.exe') # ('C:\\Windows\\System32', 'calc.exe')
+os.getcwd() # stringa del path corrispondente alla cartella di lavoro
+os.chdir('a\\b') # cambia la cartella di lavoro
+os.makedirs('C:\\path\\to\\my\\dir')
+os.path.getsize('file') # Dimensione del file (numero di byte)
+os.listdir('.') # Lista dei file contenuti nella cartella individuata dal path
+os.path.exists(path)
+os.path.isfile(path)
+os.path.isdir(path)
+
+# Nota: file di due tipi
+# 1) File di testo (plaintext)
+# 2) file binary (PDFs, images, Word documents, executable files)
+# Noi ci concentriamo sui file di testo
+# Lettura
+file = open(path, mode) # returns a File object
+file.read()
+file.readlines()
+file.seek(offset)
+file.close()
+
+# Scrittura 'w' vs. append 'a'; 
+file.write('txt')
+
+# Blocco with: si prende cura di chiudere il file (anche in caso di eccezioni)
+with open('file.txt') as f: ...
+
+# Copia, spostamento, cancellazione file e cartelle
+
+os.remove(path)     # cancella un file
+os.rmdir(path)      # elimina una cartella vuota
+
+import shutil # https://docs.python.org/3/library/shutil.html
+
+shutil.copy(from,to) # ritorna la stringa del percorso del nuovo file
+shutil.copytree(from, to) # copia la cartella indicata col primo parametro, ricorsivamente
+shutil.move(from,to)
+shutil.rmtree(pat)  # elimina una cartella e tutto il suo contenuto
+
+{% endhighlight %}
