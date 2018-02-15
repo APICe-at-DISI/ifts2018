@@ -552,6 +552,8 @@ int main(void)
 * [Immergersi in Python](http://it.diveintopython.net/toc/index.html), libro *avanzato* (versione italiana online)
 * [Elenco dei libri su Python](https://www.python.it/doc/libri/)
 * [Elenco di risorse multimediali su Python](https://www.python.it/doc/media/)
+* *Esercizi di programmazione in Python* : [collezione1 (ita)](https://www.programmareinpython.it/esercizi-python/),
+ [collezione2 (eng)](http://www.practicepython.org/)
 
 ## Esercizi svolti a lezione
 
@@ -919,8 +921,9 @@ re.compile(r'...', re.IGNORECASE | re.VERBOSE)
 
 ## Log lezioni
 
-- *15/02*: ripasso, consolidamento, e alcuni nuovi concetti/costrutti/mecchanismi
+- *15/02*: ripasso, consolidamento, e alcuni nuovi concetti/costrutti/mecchanismi, tra cui
     - Concetti: paradigmi, tipizzazione dinamica/forte
-    - Copia shallow e copia profonda
+    - Copia shallow e copia profonda (modulo `copy`, `copy.copy`, `copy.deepcopy`)
     - Passaggio di input a programmi (`sys.argv`)
-    - Impacchettamento parametri (`*args, **kwargs`)
+    - Impacchettamento parametri (`*args, **kwargs`)    
+- *16/02*: ripasso dizionari, list e dictionary comprehension, eccezioni, filesystem, modulo `os`, file I/O
