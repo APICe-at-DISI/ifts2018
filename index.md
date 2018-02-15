@@ -916,3 +916,11 @@ phoneRegex = re.compile(r'''(
 # Combining modifiers
 re.compile(r'...', re.IGNORECASE | re.VERBOSE)
 {% endhighlight %}
+
+## Log lezioni
+
+- *15/02*: ripasso, consolidamento, e alcuni nuovi concetti/costrutti/mecchanismi
+    - Concetti: paradigmi, tipizzazione dinamica/forte
+    - Copia shallow e copia profonda
+    - Passaggio di input a programmi (`sys.argv`)
+    - Impacchettamento parametri (`*args, **kwargs`)
