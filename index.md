@@ -768,7 +768,7 @@ d.clear() # elimina tutte le coppie dal dizionario
 ### Eccezioni
 
 {% highlight python %}
-raise Exception('Messaggio d'errore')
+raise Exception("Messaggio d'errore")
 
 try: ...
 except NameError: ... # cattura eccezione di tipo NameError
@@ -838,4 +838,81 @@ shutil.copytree(from, to) # copia la cartella indicata col primo parametro, rico
 shutil.move(from,to)
 shutil.rmtree(pat)  # elimina una cartella e tutto il suo contenuto
 
+{% endhighlight %}
+
+## Regexps
+
+{% highlight python %}
+import re
+
+r1 = re.compile('\\d\\d') # returns a Regex object
+r1 = re.compile(r'\d\d')  # Easier with raw strings!
+r1.search('My num is 515-555') # <_sre.SRE_Match object; span=(10,12), match='51'>
+r1.group() # '51' (returns a string of the matched text)
+
+phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
+mo = phoneNumRegex.search('My number is 415-555-4242.')
+mo.group(0) # '415-555-4242' (0 is the default)
+mo.group(1) # '415'
+mo.group(2) # '555-4242'
+fst, snd = mo.groups() # fst, snd = ('415','555-4242')
+
+r2 = re.compile('(fo)(o)|bar')
+g = r2.search('bar bar foo')
+g.group() # 'bar'
+r2.findall('bar bar foo') # [('', ''), ('', ''), ('fo', 'o')]
+re.compile('foo|bar').findall('bar bar foo') # ['bar', 'bar', 'foo']
+re.compile('(fo)(o)|(b)(ar)')
+  .findall('bar bar foo') # [('','', 'b','ar'),('','','b','ar'),('fo','o','','')]
+
+g = re.compile(r'bat(wo){0,1}man').search('Hello batwoman') # or '?'
+(g.group(), g.group(1), g.groups()) # ('batwoman', 'wo', ('wo',))
+
+# Python's regular expressions are greedy by default
+# '?', in addition to indicate optional groups
+#  can be used to declare nongreedy matches
+re.compile(r'(Ha){3,5}').search('HaHaHaHaHa').group()  # 'HaHaHaHaHa'
+re.compile(r'(Ha){3,5}?').search('HaHaHaHaHa').group() # 'HaHaHa'
+
+# Character classes
+# \d = [0-9]  \D (not \d)  \w = [a-zA-Z0-9_]  \W (not \w)
+# s = space, tab, newline, \S (not \s)
+# [0-5] = (0|1|2|3|4|5)
+
+# ^ (start text), $ (end text)
+bool(re.compile(r'^foo.*bar$')) # True (mathces have true bool value)
+
+re.compile("o").search('foo') # Match
+re.compile("o").match('foo')  # None (match() looks at beginning of string)
+
+# Greedy vs nongreedy match
+re.search(r'<.*>', '<Hey man> !>').group()  # '<Hey man> !>'
+re.search(r'<.*?>', '<Hey man> !>').group() # <Hey man>
+
+# Named groups
+m = re.match(r"(?P<first_name>\w+) (?P<last_name>\w+)", "Bob Kelso")
+m.group('first_name') # 'Bob'
+
+# Matching newlines with dot character
+re.compile('.*').findall('a\nb\nc') # ['a', '', 'b', '', 'c', '']
+re.compile('.*', re.DOTALL).findall('a\nb\nc') # ['a\nb\nc', '']
+
+# Case-insensitive match
+bool(re.compile('foo', re.IGNORECASE).match('FOo')) # True (also re.I)
+
+# Substituting strings with sub
+re.sub(r'foo', 'bar', 'Anyfoo is foo') # 'Anybar is bar'
+
+# Managing complex regexps
+phoneRegex = re.compile(r'''(
+    (\d{3}|\(\d{3}\))?            # area code
+    (\s|-|\.)?                    # separator
+    \d{3}                         # first 3 digits
+    (\s|-|\.)                     # separator
+    \d{4}                         # last 4 digits
+    (\s*(ext|x|ext.)\s*\d{2,5})?  # extension
+    )''', re.VERBOSE)
+    
+# Combining modifiers
+re.compile(r'...', re.IGNORECASE | re.VERBOSE)
 {% endhighlight %}
