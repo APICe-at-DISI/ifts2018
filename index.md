@@ -853,7 +853,7 @@ Esercizi:
 
 - Sviluppare un programma che accetta due parametri: il percorso a un file testuale, e una parola.
   Questo programma deve restituire il numero di occorrenze della parola all'interno del file.
-  Controllare 
+  Controllare che il programma sia invocato correttamente e che file esista; restituire messaggio opportuno altrimenti.
 - Sviluppare un programma che accetta tre parametri: il percorso a un file testuale, e due parole.
   Questo programma deve prima creare una copia difensiva del file indicato (se il nome è `'name.ext'`, la copia va chiamata `'backup_name.txt'`),
   e poi sostituire, nel file indicato, tutte le occorrenze della prima parola
