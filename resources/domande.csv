@@ -1,0 +1,18 @@
+Quanto fa 2+2?|5|4|3|2|2|0
+Quanto fa 12*11?|120|112|132|144|3|1
+Qual è la capitale della Francia?|Parigi|Londra|Madrid|Nantes|1|2
+Qual è la capitale dell'Inghilterra?|Parigi|Londra|Madrid|Nantes|2|2
+Qual è il nome del poeta Leopardi?|Luca|Matteo|Paolo|Giacomo|4|3
+Qual è il nome del pittore Van Gogh?|Vincent|Lorence|Andrej|Pablo|1|4
+In Python, qual è il simbolo di uguaglianza?|=|==|!=|/=|2|5
+Quanti simboli prevede un linguaggio binario?|0|1|2|3|3|6
+In Python, una lista è una sequenza|Ordinata omogenea|Ordinata eterogenea|Senza ordine, omogenea|Senza ordine, eterogenea|2|7
+In Python, un dizionario è una collezione|Ordinata omogenea|Ordinata eterogenea|Senza ordine, omogenea|Senza ordine, eterogenea|4|8
+In Python, una lista si accede|Per indice|Per chiave|Per forza sequenzialmente|Via hash|1|9
+In Python, un dizionario si accede|Per indice|Per chiave|Per forza sequenzialmente|Via puntatore|2|9
+In Python, un set ammette|Elementi duplicati|Elementi unici|Indici|Chiavi|2|10
+In Python, un errore è anche chiamato|Problema|Issue|Allarme|Eccezione|4|11
+In Python, le stringhe sono concettualmente|Insiemi di caratteri|Liste di caratteri|Tuple di caratteri|Dizionari di caratteri|3|12
+Un file Python rappresenta un|Modulo|Componente|Package|Programma|1|3
+Che metodo uso per ottenere le coppie di un dizionario d?|d.keys()|d.values()|d.entries()|d.items()|4|14
+'abc'[::-1] produce|'ABC'|'ccc'|'abc'|'cba'|4|15

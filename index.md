@@ -819,7 +819,9 @@ os.path.isdir(path)
 file = open(path, mode) # returns a File object
 file.read()
 file.readlines()
-file.seek(offset)
+file.seek(offset, 0) # muove di 'offset' byte rispetto alla posizione indicata dal secondo argomento; 
+                     # il secondo argomento significa: 0 (dall'inizio; default)
+                     # 1 (dalla posizione corrente), 2 (dalla fine)
 file.close()
 
 # Scrittura 'w' vs. append 'a'; 
@@ -840,6 +842,96 @@ shutil.copytree(from, to) # copia la cartella indicata col primo parametro, rico
 shutil.move(from,to)
 shutil.rmtree(pat)  # elimina una cartella e tutto il suo contenuto
 
+{% endhighlight %}
+
+Sommario
+
+- Modalità di apertura file: `'r'` (lettura; è il default), `'w'` (scrittura; riazzera il file se esiste), `'a'` (appende, cioè scrive alla fine indipendentemente dal cursore); `'r+'` (lettura e scrittura), `'w+'` (lettura e scrittura; riazzera il file)
+- La lettura e scrittura di un file opera mediante un cursore, che può essere spostato con `seek()`
+
+Esercizi:
+
+- Sviluppare un programma che accetta due parametri: il percorso a un file testuale, e una parola.
+  Questo programma deve restituire il numero di occorrenze della parola all'interno del file.
+  Controllare 
+- Sviluppare un programma che accetta tre parametri: il percorso a un file testuale, e due parole.
+  Questo programma deve prima creare una copia difensiva del file indicato (se il nome è `'name.ext'`, la copia va chiamata `'backup_name.txt'`),
+  e poi sostituire, nel file indicato, tutte le occorrenze della prima parola
+  con la seconda parola.
+
+## File CSV (Comma Separated Values)
+
+{% highlight python %}
+import csv
+f = open('my.csv', delimiter='|')
+r = csv.reader(f)
+
+# small files: you can read the file at once
+data = list(r)
+data[0][0] # accesses the first (0th) field of the first (0th) row
+
+# big files: you may want to iterate line-by-line
+for row in r:
+  print('Row #' + str(r.line_num) + ' ' + str(row))
+
+of = open('out.csv', 'w')
+w = csv.writer(of, delimiter='|', lineterminator='\n---\n')
+w.writerow(['a b c','d e','f'])
+w.writerow([1,3.14,7])
+
+f.close(); of.close();
+{% endhighlight %}
+
+Esercizio
+* Creare un programma che simula il gioco 'Chi vuol essere milionario'.
+  Questo programma accetta un singolo argomento che indica il percorso a un file CSV con domande e risposte (vedi sotto).
+  Il CSV ha i seguenti campi: `domanda|risposta1|risposta2|risposta3|risposta4|risposta_corretta(1,2,3,4)|difficoltà(1-15)`
+  Il programma chiede all'utente il suo nome e poi inizia il gioco.
+  L'utente può scegliere la risposta digitando 1-4, oppure 'lascia' per andarsene col montepremi conquistato.
+  Una volta conquistati i 1000€ o i 32000€, questi sono comunque mantenuti anche in caso di risposta errata.
+  Il programma termina quando il giocatore sbaglia o lascia il gioco.
+  Il programma dopo ogni partita aggiunge in un file `storico.txt` una riga '[DATA] NOME: MONTEPREMI VINTO'
+  (per data corrente: `datetime.datetime.now().strftime('%Y/%m/%d')`).
+  
+Scarica [domande.csv](resources/domande.csv)
+
+{% highlight csv %}
+Quanto fa 2+2?|5|4|3|2|2|1
+Quanto fa 12*11?|120|112|132|144|3|2
+Qual è la capitale della Francia?|Parigi|Londra|Madrid|Nantes|1|2
+Qual è la capitale dell'Inghilterra?|Parigi|Londra|Madrid|Nantes|2|2
+Qual è il nome del poeta Leopardi?|Luca|Matteo|Paolo|Giacomo|4|3
+Qual è il nome del pittore Van Gogh?|Vincent|Lorence|Andrej|Pablo|1|4
+In Python, qual è il simbolo di uguaglianza?|=|==|!=|/=|2|5
+Quanti simboli prevede un linguaggio binario?|0|1|2|3|3|6
+In Python, una lista è una sequenza|Ordinata omogenea|Ordinata eterogenea|Senza ordine, omogenea|Senza ordine, eterogenea|2|7
+In Python, un dizionario è una collezione|Ordinata omogenea|Ordinata eterogenea|Senza ordine, omogenea|Senza ordine, eterogenea|4|8
+In Python, una lista si accede|Per indice|Per chiave|Per forza sequenzialmente|Via hash|1|9
+In Python, un dizionario si accede|Per indice|Per chiave|Per forza sequenzialmente|Via puntatore|2|9
+In Python, un set ammette|Elementi duplicati|Elementi unici|Indici|Chiavi|2|10
+In Python, un errore è anche chiamato|Problema|Issue|Allarme|Eccezione|4|11
+In Python, le stringhe sono concettualmente|Insiemi di caratteri|Liste di caratteri|Tuple di caratteri|Dizionari di caratteri|3|12
+Un file Python rappresenta un|Modulo|Componente|Package|Programma|1|13
+Che metodo uso per ottenere le coppie di un dizionario d?|d.keys()|d.values()|d.entries()|d.items()|4|14
+'abc'[::-1] produce|'ABC'|'ccc'|'abc'|'cba'|4|15
+{% endhighlight %}
+{% highlight python %}
+DOMANDA,RISP1,RISP2,RISP3,RISP4,RISPCORRETTA,DIFF = range(7)
+[d for d in data if d[DIFF]=='0']
+montepremi = [50, 100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 500000, 1000000]
+{% endhighlight %}
+
+## Modulo `shelve`: salvataggio oggetti Python su file (persistenza)
+
+{% highlight python %}
+import shelve
+shelf = shelve.open('myfile')
+shelf.keys()
+shelf.values()
+data = shelf['data'] # retrieves a COPY of data at given key
+del shelf['data']
+shelf['somedata'] = {'a':1, 'b':2}
+shelf.close()
 {% endhighlight %}
 
 ## Regexps
@@ -926,4 +1018,4 @@ re.compile(r'...', re.IGNORECASE | re.VERBOSE)
     - Copia shallow e copia profonda (modulo `copy`, `copy.copy`, `copy.deepcopy`)
     - Passaggio di input a programmi (`sys.argv`)
     - Impacchettamento parametri (`*args, **kwargs`)    
-- *16/02*: ripasso dizionari, list e dictionary comprehension, eccezioni, filesystem, modulo `os`, file I/O
+- *16/02*: ripasso dizionari, list e dictionary comprehension, eccezioni, filesystem (path relativi/assoluti), modulo `os`, file I/O (lettura)
