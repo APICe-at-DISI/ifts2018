@@ -934,6 +934,15 @@ shelf['somedata'] = {'a':1, 'b':2}
 shelf.close()
 {% endhighlight %}
 
+Esercizi
+
+- Creare un programma che fornisce un servizio "rubrica telefonica". Accetta comandi del tipo: 
+    - `AGGIUNGI 'Luca Rossi' 340133255` dicendo "ok" o "Contatto già presente"
+    - `AGGIORNA 'Luca Rossi' 34047512` dicendo "ok" o "Contatto non trovato"
+    - `NUMERO 'Luca Rossi'` dicendo il numero oppure "Contatto non trovato"
+    - `NOME 3243453` dicendo il nome del contatto oppure "Numero non trovato"
+- Estensione: usa un'espressione regolare per validare i numeri di telefono 
+
 ## Regexps
 
 {% highlight python %}
