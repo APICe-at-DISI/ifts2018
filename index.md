@@ -859,6 +859,84 @@ Esercizi:
   e poi sostituire, nel file indicato, tutte le occorrenze della prima parola
   con la seconda parola.
 
+## Programmazione ad oggetti (OOP)
+
+**OGGETTI: STATO (campi) + COMPORTAMENTO (metodi)**
+
+- Un oggetto ha una serie di attributi (anche detti: campi, membri, proprietà),
+  cioè metodi (particolari funzioni) o attributi dato, 
+  che si possono accedere a partire dal riferimento all'oggetto.
+- Un oggetto viene creato a partire da una **CLASSE**
+- Mentre `Classe.f` referenzia una funzione, `oggetto.f` referenzia un metodo:
+  significa che chiamate `oggetto.f(arg1, arg2, ...)` risulteranno in un'invocazione
+  di `Classe.f(oggetto, arg1, arg2, ...)`.  Ossia, l'invocazione di un metodo
+  su un oggetto `o` risulterà nella chiamata della funzione corrispondente 
+  fornendo l'oggetto `o` come primo parametro, seguito da quelli specificati nella
+  chiamata a metodo.
+
+
+{% highlight python %}
+#####################################
+##### Definizione di base
+#####################################
+
+class Klass: pass
+
+Klass.dimmi_il_tuo_nome = lambda s: print(s.nome)
+k.nome = 'Bob'
+k.dimmi_il_tuo_nome() # Stampa in output: Bob
+
+class MyClass:
+    """Una semplice classe""" # stringa di documentazione
+    i = 12345
+
+    def f(self):
+        return 'hello world'
+        
+MyClass.i       # => 12345 (campo di classe)
+MyClass.f(1)    # => 'hello world'
+MyClass.__doc__ # => 'Una semplice classe'
+
+m = MyClass()   # Istanziazione di classi usa la notazione di chiamata a funzione
+m.f() # => 'hello world'  (self=m all'interno di f)
+
+m.__class__
+
+#####################################
+##### Costruttori e costruzione
+#####################################
+class Complex:
+  def __init__(self, realpart, imagpart):
+    self.r = realpart
+    self.i = imagpart
+
+x = Complex(3.0, -4.5)
+x.r, x.i                # (3.0, -4.5)
+
+#####################################
+##### Ereditarietà
+#####################################
+class B:
+  def __init__(self, arg=77):
+    self.prop = arg
+  
+  def method(self, arg): print('B.method: ' + str(arg))
+
+class C(B):
+  def __init__(self):
+    super().__init__(88)
+  
+  def method(self, arg):
+    super().method(arg) # This does the same as: super(C, self).method(arg)
+    print('C.method: ' + str(arg))
+
+c = C()
+c.prop # 88
+c.method('!!!')
+# B.method: !!!
+# C.method: !!!
+{% endhighlight %}
+
 ## File CSV (Comma Separated Values)
 
 {% highlight python %}
