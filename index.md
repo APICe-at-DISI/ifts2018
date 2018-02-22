@@ -518,27 +518,27 @@ int main(void)
 ## Scaletta dei contenuti (in aggiornamento, può subire variazioni anche consistenti)
 
 * Interprete Python, REPL, script
-* valori, espressioni, operatori, confronto ed equivalenza, operatori booleani
-* tipi, tipi predefiniti
-* conversioni fra tipi, chiamata di funzione
-* variabili, nomi consentiti, assegnamento, riferimento
-* commento, `print`, `input`, `len`, `type`
-* Esercizi cap. 1
+* Valori, espressioni, operatori, confronto ed equivalenza, operatori booleani
+* Tipi, tipi predefiniti
+* Conversioni fra tipi, chiamata di funzione
+* Variabili, nomi consentiti, assegnamento, riferimento
+* Commento, importanti funzioni built-in (`print`, `input`, `len`, `type`, `dir`)
 * Controllo del flusso: if-elif-else (branching), indentazione e sintassi
 * Controllo del flusso: `while` (repetition aka iteration) [continue e break], `for` (e `range` fun)
 * Funzioni: definizione, parametri, ritorno; scope locale e globale
 * Parametri di default, parametri con nome
 * Moduli, `import`, passaggio parametri a programmi (`sys.argv`)
 * Liste: sintassi letterale, accesso, indexing/slicing, `len`, operazioni su list
-* riferimenti (in assegnmento e passaggio parametri), [`copy()`, `deepcopy()`]
-* iterating over lists, (`not`) `in` operatore, metodi (e.g., list.index(obj, *args, remove, sort..))
-* stringhe come liste, tuple
-* dizionari
-* basic file I/O, Eccezioni
-* advanced file I/O (shutil)
-* IDE: PyCharm
-* string manipulation
-* regexps
+* Riferimenti (in assegnmento e passaggio parametri), [`copy()`, `deepcopy()`]
+* Iterazione su lists, operatore (`not`) `in`, metodi (e.g., list.index(obj, *args, remove, sort..))
+* Stringhe come liste, tuple
+* Dizionari
+* List/dictionary/set comprehension
+* Modulo `os`, filesystem, percorsi (path), directory di lavoro, file I/O di base (`open`, modalità di apertura, lettura, scrittura, `seek`)
+* Eccezioni: `try: .. except: .. finally: ..`
+* I/O su file avanzato (modulo `shutil`, modulo `csv`)
+* Programmazione ad oggetti: oggetto, classe, metodo, istanziazione di oggetti, costruttore, oggetto ricevitore
+* NON trattati: regexps, IDE (PyCharm), programmazione funzionale (funzioni first-class, lambda, e funzioni di ordine superiore)
 
 ## Testi e risorse per lo studio
 
@@ -882,6 +882,8 @@ Esercizi:
 
 class Klass: pass
 
+k = Klass() # creazione istanza
+
 Klass.dimmi_il_tuo_nome = lambda s: print(s.nome)
 k.nome = 'Bob'
 k.dimmi_il_tuo_nome() # Stampa in output: Bob
@@ -941,8 +943,8 @@ c.method('!!!')
 
 {% highlight python %}
 import csv
-f = open('my.csv', delimiter='|')
-r = csv.reader(f)
+f = open('my.csv')
+r = csv.reader(f, delimiter='|')
 
 # small files: you can read the file at once
 data = list(r)
@@ -1150,10 +1152,18 @@ re.compile(r'...', re.IGNORECASE | re.VERBOSE)
 
 ## Log lezioni
 
-- *15/02*: ripasso, consolidamento, e alcuni nuovi concetti/costrutti/mecchanismi, tra cui
+- *14/02*: ripasso, consolidamento, e alcuni nuovi concetti/costrutti/mecchanismi, tra cui
     - Concetti: paradigmi, tipizzazione dinamica/forte
     - Copia shallow e copia profonda (modulo `copy`, `copy.copy`, `copy.deepcopy`)
     - Passaggio di input a programmi (`sys.argv`)
     - Impacchettamento parametri (`*args, **kwargs`)    
-- *16/02*: ripasso dizionari, list e dictionary comprehension, eccezioni, filesystem (path relativi/assoluti), modulo `os`, file I/O (lettura)
-- *17/02*: consolidamento ultimi argomenti, file I/O (lettura e scrittura), esercizio guidato sui file
+- *15/02*: ripasso dizionari, list e dictionary comprehension, eccezioni, filesystem (path relativi/assoluti), modulo `os`, file I/O (lettura)
+- *16/02*: consolidamento ultimi argomenti, file I/O (lettura e scrittura), esercizio guidato sui file
+- *22/02*: programmazione ad oggetti, file CSV, esercizi
+
+## Modalità d'esame
+
+Due prove:
+
+* **Scritto** (30 minuti): domande V/F, a risposta multipla, o a risposta scritta
+* **Prova pratica** (1 ora 30 minuti): 3 esercizi di programmazione
