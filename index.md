@@ -1168,4 +1168,3 @@ Due prove:
 * **Scritto** (30 minuti): domande V/F, a risposta multipla, o a risposta scritta
 * **Prova pratica** (1 ora 30 minuti): 3 esercizi di programmazione
 
-[Link alla prova pratica](resources/IFTS2018-ProvaPratica.pdf)
